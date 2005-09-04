@@ -1,4 +1,5 @@
-Summary:	Gallery Remote
+Summary:	Gallery Remote - client-side frontend to Gallery
+Summary(pl):	Gallery Remote - frontend do Gallery dzia³aj±cy po stronie klienta
 Name:		gallery-remote
 Version:	1.4.1
 Release:	0.12
@@ -8,12 +9,12 @@ Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
 # Source0-md5:	763af4f97120f5142222961f02e3943d
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
 BuildRequires:	sed >= 4.0
-Requires:	jre >= 1.4
 Requires:	ImageMagick
-Requires:	ImageMagick-coder-tiff
-Requires:	ImageMagick-coder-jpeg2
 Requires:	ImageMagick-coder-jpeg
+Requires:	ImageMagick-coder-jpeg2
 Requires:	ImageMagick-coder-png
+Requires:	ImageMagick-coder-tiff
+Requires:	jre >= 1.4
 Requires:	libjpeg-progs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,6 +25,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Gallery Remote is a client-side Java application that provides users
 with a rich front-end to Gallery. This application makes it easier to
 upload images to your Gallery.
+
+%description -l pl
+Gallery Remote to aplikacja w Javie dzia³aj±ca po stronie klienta
+udostêpniaj±ca u¿ytkownikom bogaty frontend do Gallery. Ta aplikacja
+czyni ³atwiejszym umieszczanie obrazków w Gallery.
 
 %prep
 %setup -q -c
