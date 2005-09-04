@@ -2,11 +2,12 @@ Summary:	Gallery Remote - client-side frontend to Gallery
 Summary(pl):	Gallery Remote - frontend do Gallery dzia³aj±cy po stronie klienta
 Name:		gallery-remote
 Version:	1.4.1
-Release:	0.12
+Release:	0.15
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
 # Source0-md5:	763af4f97120f5142222961f02e3943d
+Source1:	%{name}.png
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
 BuildRequires:	sed >= 4.0
 Requires:	ImageMagick
@@ -63,13 +64,26 @@ $,,' jpegtran/jpegtran.properties
 rm -rf $RPM_BUILD_ROOT
 cd %{name}
 
-install -d $RPM_BUILD_ROOT{%{_appdir},%{_bindir}}
+install -d $RPM_BUILD_ROOT{%{_appdir},%{_bindir},%{_pixmapsdir},%{_desktopdir}}
 cp -a imagemagick img jpegtran lib $RPM_BUILD_ROOT%{_appdir}
 cp -a defaults.properties rar*.* $RPM_BUILD_ROOT%{_appdir}
 cp -a *.jar $RPM_BUILD_ROOT%{_appdir}
 cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 #!/bin/sh
 exec java -cp %{_appdir}/GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
+EOF
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
+cat <<EOF > $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gallery Remote
+Comment=Gallery Remote - client-side frontend to Gallery
+Icon=%{name}.png
+Exec=%{name}
+Terminal=false
+Type=Application
+Categories=Graphics;
+# vi: encoding=utf-8
 EOF
 
 %clean
@@ -80,3 +94,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{name}/{ChangeLog,README,HOWTO.imagemagick,html}
 %attr(755,root,root) %{_bindir}/*
 %{_appdir}
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/*.png
