@@ -2,7 +2,7 @@ Summary:	Gallery Remote - client-side frontend to Gallery
 Summary(pl):	Gallery Remote - frontend do Gallery dzia³aj±cy po stronie klienta
 Name:		gallery-remote
 Version:	1.4.1
-Release:	0.15
+Release:	0.16
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
@@ -70,7 +70,8 @@ cp -a defaults.properties rar*.* $RPM_BUILD_ROOT%{_appdir}
 cp -a *.jar $RPM_BUILD_ROOT%{_appdir}
 cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 #!/bin/sh
-exec java -cp %{_appdir}/GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
+cd %{_appdir}
+exec java -cp GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
 EOF
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
 cat <<EOF > $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
