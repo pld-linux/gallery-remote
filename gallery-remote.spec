@@ -5,7 +5,7 @@ Release:	0.1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.Linux.NoVM.bin
-# Source0-md5:	ad84576e9dedb24fdf3c5b90cd3003ef
+# Source0-md5:	2185e22dcd01c6f037a4b3a9d5a4300e
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
 BuildArch:	noarch
 Requires:	jre >= 1.4
