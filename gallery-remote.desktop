@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gallery Remote
+Comment=Gallery Remote - client-side frontend to Gallery
+Comment[pl]Gallery Remote - nakładka kliencka na Gallery
+Icon=%{name}.png
+Exec=%{name}
+Terminal=false
+Type=Application
+Categories=Graphics;
+# vi: encoding=utf-8
