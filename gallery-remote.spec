@@ -8,6 +8,7 @@ Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
 # Source0-md5:	763af4f97120f5142222961f02e3943d
 Source1:	%{name}.png
+Source2:	%{name}.desktop
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
 BuildRequires:	sed >= 4.0
 Requires:	ImageMagick
@@ -74,18 +75,7 @@ cd %{_appdir}
 exec java -cp GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
 EOF
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
-cat <<EOF > $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
-[Desktop Entry]
-Encoding=UTF-8
-Name=Gallery Remote
-Comment=Gallery Remote - client-side frontend to Gallery
-Icon=%{name}.png
-Exec=%{name}
-Terminal=false
-Type=Application
-Categories=Graphics;
-# vi: encoding=utf-8
-EOF
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
