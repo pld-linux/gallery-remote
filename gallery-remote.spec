@@ -1,12 +1,12 @@
 Summary:	Gallery Remote - client-side frontend to Gallery
 Summary(pl):	Gallery Remote - frontend do Gallery dzia³aj±cy po stronie klienta
 Name:		gallery-remote
-Version:	1.4.1
-Release:	0.16
+Version:	1.5
+Release:	1
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
-# Source0-md5:	763af4f97120f5142222961f02e3943d
+# Source0-md5:	6043106f54f85380b1bbc06d8dd19d4f
 Source1:	%{name}.png
 Source2:	%{name}.desktop
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
@@ -35,7 +35,8 @@ czyni ³atwiejszym umieszczanie obrazków w Gallery.
 
 %prep
 %setup -q -c
-unzip -qq Disk1/InstData/Resource1.zip
+install -d gallery_docs
+unzip -qq -o Disk1/InstData/Resource1.zip
 
 # use better names
 mv '$IA_PROJECT_DIR$' %{name}
@@ -58,8 +59,7 @@ rm jpegtran/jpegtran.preinstalled
 rm -rf jpegtran/linux
 sed -i -e '/^jp\.path/s/=.*/=jpegtran/' jpegtran/jpegtran.properties
 # undos
-sed -i -e 's,
-$,,' jpegtran/jpegtran.properties
+sed -i -e 's,\r$,,' jpegtran/jpegtran.properties
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -67,7 +67,6 @@ cd %{name}
 
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_bindir},%{_pixmapsdir},%{_desktopdir}}
 cp -a imagemagick img jpegtran lib $RPM_BUILD_ROOT%{_appdir}
-cp -a defaults.properties rar*.* $RPM_BUILD_ROOT%{_appdir}
 cp -a *.jar $RPM_BUILD_ROOT%{_appdir}
 cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 #!/bin/sh
