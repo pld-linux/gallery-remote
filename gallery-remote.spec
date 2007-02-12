@@ -1,5 +1,5 @@
 Summary:	Gallery Remote - client-side frontend to Gallery
-Summary(pl):	Gallery Remote - frontend do Gallery dzia³aj±cy po stronie klienta
+Summary(pl.UTF-8):   Gallery Remote - frontend do Gallery dziaÅ‚ajÄ…cy po stronie klienta
 Name:		gallery-remote
 Version:	1.5
 Release:	1
@@ -28,10 +28,10 @@ Gallery Remote is a client-side Java application that provides users
 with a rich front-end to Gallery. This application makes it easier to
 upload images to your Gallery.
 
-%description -l pl
-Gallery Remote to aplikacja w Javie dzia³aj±ca po stronie klienta
-udostêpniaj±ca u¿ytkownikom bogaty frontend do Gallery. Ta aplikacja
-czyni ³atwiejszym umieszczanie obrazków w Gallery.
+%description -l pl.UTF-8
+Gallery Remote to aplikacja w Javie dziaÅ‚ajÄ…ca po stronie klienta
+udostÄ™pniajÄ…ca uÅ¼ytkownikom bogaty frontend do Gallery. Ta aplikacja
+czyni Å‚atwiejszym umieszczanie obrazkÃ³w w Gallery.
 
 %prep
 %setup -q -c
