@@ -1,5 +1,5 @@
 Summary:	Gallery Remote - client-side frontend to Gallery
-Summary(pl.UTF-8):   Gallery Remote - frontend do Gallery działający po stronie klienta
+Summary(pl.UTF-8):	Gallery Remote - frontend do Gallery działający po stronie klienta
 Name:		gallery-remote
 Version:	1.5
 Release:	1
