@@ -1,14 +1,19 @@
+#
+%define		_base	1.5
+%define		_ver	b31
 Summary:	Gallery Remote - client-side frontend to Gallery
 Summary(pl.UTF-8):	Gallery Remote - frontend do Gallery działający po stronie klienta
 Name:		gallery-remote
-Version:	1.5
-Release:	1
+Version:	1.5.1
+Release:	%{_ver}_0.1
 License:	GPL v2
 Group:		Applications/Publishing
-Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{version}.jar
-# Source0-md5:	6043106f54f85380b1bbc06d8dd19d4f
-Source1:	%{name}.png
-Source2:	%{name}.desktop
+Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{_base}.jar
+# Source0-md5:  6043106f54f85380b1bbc06d8dd19d4f
+Source1:	http://www.gallery2.hu/download/GalleryRemote/gallery_remote_%{version}-%{_ver}.zip
+# Source1-md5:	657d766c14a6e7e13b766b92dd67a13f
+Source2:	%{name}.png
+Source3:	%{name}.desktop
 URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
 BuildRequires:	sed >= 4.0
 Requires:	ImageMagick
@@ -34,15 +39,13 @@ udostępniająca użytkownikom bogaty frontend do Gallery. Ta aplikacja
 czyni łatwiejszym umieszczanie obrazków w Gallery.
 
 %prep
-%setup -q -c
+%setup -q -c -n %{name}-%{_base}
 install -d gallery_docs
 unzip -qq -o Disk1/InstData/Resource1.zip
-
-# use better names
 mv '$IA_PROJECT_DIR$' %{name}
-
 cd %{name}
 
+unzip -qq -o %{SOURCE1}
 mv gallery_docs/dist/grpackage html
 rm -f LICENSE # GPL v2
 rm -rf */{win32,macos} # wrong os
@@ -73,8 +76,8 @@ cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 cd %{_appdir}
 exec java -cp GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
 EOF
-install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
