@@ -9,9 +9,9 @@ Release:	%{_ver}_0.1
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{_base}.jar
-# Source0-md5:  6043106f54f85380b1bbc06d8dd19d4f
-Source1:	http://www.gallery2.hu/download/GalleryRemote/gallery_remote_%{version}-%{_ver}.zip
-# Source1-md5:	657d766c14a6e7e13b766b92dd67a13f
+# Source0-md5:	6043106f54f85380b1bbc06d8dd19d4f
+Source1:	http://dl.sourceforge.net/gallery/GalleryRemote.1.5.Linux.NoVM.bin
+# Source1-md5:	521fb28f0027c4d7c84f7ef26c21b790
 Source2:	%{name}.png
 Source3:	%{name}.desktop
 URL:		http://gallery.menalto.com/wiki/Gallery_Remote
@@ -35,8 +35,8 @@ upload images to your Gallery.
 
 %description -l pl.UTF-8
 Gallery Remote to aplikacja w Javie działająca po stronie klienta
-udostępniająca użytkownikom bogaty frontend do Gallery. Ta aplikacja
-czyni łatwiejszym umieszczanie obrazków w Gallery.
+udostępniająca użytkownikom bogaty frontend do Gallery. Ta
+aplikacja czyni łatwiejszym umieszczanie obrazków w Gallery.
 
 %prep
 %setup -q -c -n %{name}-%{_base}
