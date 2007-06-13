@@ -14,7 +14,7 @@ Source1:	http://www.gallery2.hu/download/GalleryRemote/gallery_remote_%{version}
 # Source1-md5:	657d766c14a6e7e13b766b92dd67a13f
 Source2:	%{name}.png
 Source3:	%{name}.desktop
-URL:		http://gallery.menalto.com/modules.php?op=modload&name=phpWiki&file=index&pagename=Gallery%20Remote
+URL:		http://gallery.menalto.com/wiki/Gallery_Remote
 BuildRequires:	sed >= 4.0
 Requires:	ImageMagick
 Requires:	ImageMagick-coder-jpeg
