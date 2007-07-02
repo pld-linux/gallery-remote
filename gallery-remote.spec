@@ -74,7 +74,7 @@ cp -a *.jar $RPM_BUILD_ROOT%{_appdir}
 cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 #!/bin/sh
 cd %{_appdir}
-exec java -cp GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
+exec java -Xmx1024m -cp GalleryRemote.jar com.gallery.GalleryRemote.GalleryRemote
 EOF
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
