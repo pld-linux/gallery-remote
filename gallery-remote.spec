@@ -1,16 +1,17 @@
 #
 %define		_base	1.5
-%define		_ver	b32
+%define		_rc		b32
+%define		_rel	1
 Summary:	Gallery Remote - client-side frontend to Gallery
 Summary(pl.UTF-8):	Gallery Remote - frontend do Gallery działający po stronie klienta
 Name:		gallery-remote
 Version:	1.5.1
-Release:	%{_ver}.0.2
+Release:	%{_rc}.%{_rel}
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/gallery/GalleryRemote.%{_base}.Linux.NoVM.bin
 # Source0-md5:	521fb28f0027c4d7c84f7ef26c21b790
-Source1:	http://www.gallery2.hu/download/GalleryRemote/gallery_remote_%{version}-%{_ver}.zip
+Source1:	http://www.gallery2.hu/download/GalleryRemote/gallery_remote_%{version}-%{_rc}.zip
 # Source1-md5:	657d766c14a6e7e13b766b92dd67a13f
 Source2:	%{name}.png
 Source3:	%{name}.desktop
