@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Gallery Remote
 Comment=Gallery Remote - client-side frontend to Gallery
 Comment[pl]=Gallery Remote - nakładka kliencka na Gallery
-Icon=gallery-remote.png
+Icon=gallery-remote
 Exec=gallery-remote
 Terminal=false
 Type=Application
