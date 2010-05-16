@@ -17,6 +17,7 @@ Source2:	%{name}.png
 Source3:	%{name}.desktop
 URL:		http://gallery.menalto.com/wiki/Gallery_Remote
 BuildRequires:	sed >= 4.0
+BuildRequires:	unzip
 Requires:	ImageMagick
 Requires:	ImageMagick-coder-jpeg
 Requires:	ImageMagick-coder-jpeg2
